@@ -6,6 +6,7 @@ FROM maven:latest
 #RUN 'chmod -R 777 /home/ubuntu/workspace'
 #RUN apt-get update && apt-get install -y git
 RUN git clone https://github.com/shashidhar0711/springboot_example.git
+RUN ls
 
 # specifing a working directory
 WORKDIR /springboot_example

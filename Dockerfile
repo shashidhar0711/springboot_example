@@ -13,12 +13,12 @@ WORKDIR /springboot_example
 # changing the directory
 # RUN cd reifenlabelservice/reifenlabel-service/
 
+# installing the maveen
 RUN mvn --version
 RUN mvn install
 
-
 # Creating a jar or war file  without running any tests
-#RUN package 
+RUN mvn clean package 
 #RUN mvn clean install
 
 # once get create's the jar file
@@ -26,16 +26,16 @@ RUN mvn install
 RUN mkdir /app
 
 # specifying the working directory
-#WORKDIR /app
+WORKDIR /app
 
 # setting up the environment variables
-#ENV BUILD_VERSION=$BUILD_VERSION
+ENV BUILD_VERSION=$BUILD_VERSION
 
 # copying the jar from target path into container root directory
-#COPY --from=build /opt/app/target/reifenlabelservice-*.jar ./reifenlabelservice.jar
+COPY --from=build /opt/app/target/reifenlabelservice-*.jar ./reifenlabelservice.jar
 
 # exposing the port number into 8080
-#EXPOSE 8080
+EXPOSE 8080
 
 # # used to execute the specific command when the container starts
-#CMD ["java", "-jar", "reifenlabelservice-*.jar ./reifenlabelservice.jar"]
+CMD ["java", "-jar", "reifenlabelservice.jar"]

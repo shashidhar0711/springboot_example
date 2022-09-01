@@ -2,8 +2,8 @@
 FROM maven:latest
 
 #cloning the git
-RUN 'ls -lrt /home/ubuntu/'
-RUN 'chmod -R 777 /home/ubuntu/workspace'
+#RUN 'ls -lrt /home/ubuntu/'
+#RUN 'chmod -R 777 /home/ubuntu/workspace'
 RUN apt-get update && apt-get install -y git
 RUN git clone https://github.com/shashidhar0711/springboot_example.git
 

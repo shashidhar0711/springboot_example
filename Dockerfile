@@ -14,7 +14,7 @@ WORKDIR /springboot_example
 # RUN cd reifenlabelservice/reifenlabel-service/
 
 RUN mvn --version
-#RUN mvn install
+RUN mvn install
 
 
 # Creating a jar or war file  without running any tests

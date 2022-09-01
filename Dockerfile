@@ -15,7 +15,7 @@ WORKDIR /springboot_example
 
 # installing the maveen
 RUN mvn --version
-RUN mvn install
+#RUN mvn install
 
 # Creating a jar or war file  without running any tests
 RUN mvn clean package 

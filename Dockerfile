@@ -11,7 +11,7 @@ RUN git clone https://github.com/shashidhar0711/springboot_example.git
 WORKDIR /reifenlabelservice/reifenlabel-service
 
 # changing the directory
-RUN cd reifenlabelservice/reifenlabel-service/
+# RUN cd reifenlabelservice/reifenlabel-service/
 
 
 # Creating a jar or war file  without running any tests

@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y git
 RUN git clone https://github.com/shashidhar0711/springboot_example.git
 
 # specifing a working directory
-WORKDIR /reifenlabelservice/reifenlabel-service
+WORKDIR /springboot_example
 
 # changing the directory
 # RUN cd reifenlabelservice/reifenlabel-service/

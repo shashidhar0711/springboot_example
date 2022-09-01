@@ -1,17 +1,34 @@
 ## using the openjdk image as the base image
-FROM openjdk
+FROM maven:latest
 
-# create a new directory inside the container
-RUN mkdir /sampleJavaApp
+#cloning the git
+RUN git clone https://TARBHAT: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@git.daimler.com/mbrdi/reifenlabelservice.git
 
-# copying the current existing file from host machine into image path directory
-COPY . sampleJavaApp
+# specifing a working directory
+WORKDIR /reifenlabelservice/reifenlabel-service
 
-# working directory
-WORKDIR /sampleJavaApp
+# changing the directory
+RUN cd reifenlabelservice/reifenlabel-service/
 
-# run the application
-RUN javac HelloWorld.java
 
-# used to execute the specific command when the container starts
-CMD [ "java", "HelloWorld" ]
+# Creating a jar or war file  without running any tests
+RUN mvn clean package -DskipTests=true
+
+# once get create's the jar file
+# again, creating the another directory
+RUN mkdir /app
+
+# specifying the working directory
+WORKDIR /app
+
+# setting up the environment variables
+ENV BUILD_VERSION=$BUILD_VERSION
+
+# copying the jar from target path into container root directory
+COPY --from=build /opt/app/target/reifenlabelservice-*.jar ./reifenlabelservice.jar
+
+# exposing the port number into 8080
+EXPOSE 8080
+
+# # used to execute the specific command when the container starts
+CMD ["java", "-jar", "reifenlabelservice-*.jar ./reifenlabelservice.jar"]

@@ -2,7 +2,7 @@
 FROM maven:latest
 
 #cloning the git
-RUN git clone https://TARBHAT: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@git.daimler.com/mbrdi/reifenlabelservice.git
+RUN git clone https://github.com/shashidhar0711/springboot_example.git
 
 # specifing a working directory
 WORKDIR /reifenlabelservice/reifenlabel-service

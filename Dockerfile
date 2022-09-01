@@ -22,16 +22,16 @@ RUN mvn clean package -DskipTests=true
 RUN mkdir /app
 
 # specifying the working directory
-WORKDIR /app
+#WORKDIR /app
 
 # setting up the environment variables
-ENV BUILD_VERSION=$BUILD_VERSION
+#ENV BUILD_VERSION=$BUILD_VERSION
 
 # copying the jar from target path into container root directory
 #COPY --from=build /opt/app/target/reifenlabelservice-*.jar ./reifenlabelservice.jar
 
 # exposing the port number into 8080
-EXPOSE 8080
+#EXPOSE 8080
 
 # # used to execute the specific command when the container starts
 #CMD ["java", "-jar", "reifenlabelservice-*.jar ./reifenlabelservice.jar"]

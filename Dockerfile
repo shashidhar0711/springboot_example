@@ -28,10 +28,10 @@ WORKDIR /app
 ENV BUILD_VERSION=$BUILD_VERSION
 
 # copying the jar from target path into container root directory
-COPY --from=build /opt/app/target/reifenlabelservice-*.jar ./reifenlabelservice.jar
+#COPY --from=build /opt/app/target/reifenlabelservice-*.jar ./reifenlabelservice.jar
 
 # exposing the port number into 8080
 EXPOSE 8080
 
 # # used to execute the specific command when the container starts
-CMD ["java", "-jar", "reifenlabelservice-*.jar ./reifenlabelservice.jar"]
+#CMD ["java", "-jar", "reifenlabelservice-*.jar ./reifenlabelservice.jar"]

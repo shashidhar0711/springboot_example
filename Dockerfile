@@ -1,5 +1,5 @@
 ## using the openjdk image as the base image
-FROM openjdk:8-jdk-alpine
+FROM maven:latest
 
 #cloning the git
 #RUN 'ls -lrt /home/ubuntu/'

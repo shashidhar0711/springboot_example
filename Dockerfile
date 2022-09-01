@@ -18,7 +18,7 @@ RUN mvn --version
 
 
 # Creating a jar or war file  without running any tests
-RUN mvn clean package 
+#RUN package 
 #RUN mvn clean install
 
 # once get create's the jar file

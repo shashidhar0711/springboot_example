@@ -5,20 +5,20 @@ FROM maven:latest
 #RUN 'ls -lrt /home/ubuntu/'
 #RUN 'chmod -R 777 /home/ubuntu/workspace'
 #RUN apt-get update && apt-get install -y git
-RUN git clone https://github.com/shashidhar0711/springboot_example.git
+#RUN git clone https://github.com/shashidhar0711/springboot_example.git
 
 # specifing a working directory
-WORKDIR /springboot_example
+#WORKDIR /springboot_example
 
 # changing the directory
 # RUN cd reifenlabelservice/reifenlabel-service/
 
 # installing the maveen
-RUN mvn --version
+#RUN mvn --version
 #RUN mvn install
 
 # Creating a jar or war file  without running any tests
-RUN mvn clean package 
+#RUN mvn clean package 
 #RUN mvn clean install
 
 # once get create's the jar file
@@ -32,10 +32,10 @@ WORKDIR /app
 ENV BUILD_VERSION=$BUILD_VERSION
 
 # copying the jar from target path into container root directory
-COPY --from=build /opt/app/target/reifenlabelservice-*.jar ./reifenlabelservice.jar
+COPY targert/springboot_example-*.jar ./springboot_example.jar
 
 # exposing the port number into 8080
 EXPOSE 8080
 
 # # used to execute the specific command when the container starts
-CMD ["java", "-jar", "reifenlabelservice.jar"]
+CMD ["java", "-jar", "./springboot_example.jar"]

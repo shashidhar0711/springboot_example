@@ -35,7 +35,7 @@ FROM maven:latest
 COPY target/reifenlabel-service-*.jar ./springboot_example.jar
 
 # exposing the port number into 8080
-EXPOSE 8080
+EXPOSE 5432
 
 # # used to execute the specific command when the container starts
 CMD ["java", "-jar", "./springboot_example.jar"]

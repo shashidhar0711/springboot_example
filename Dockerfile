@@ -32,7 +32,7 @@ FROM maven:latest
 #ENV BUILD_VERSION=$BUILD_VERSION
 
 # copying the jar from target path into container root directory
-COPY target/*.jar ./springboot_example.jar
+COPY target/reifenlabel-service-*.jar ./springboot_example.jar
 
 # exposing the port number into 8080
 EXPOSE 8080

@@ -32,7 +32,7 @@ WORKDIR /app
 ENV BUILD_VERSION=$BUILD_VERSION
 
 # copying the jar from target path into container root directory
-COPY springboot_example-*.jar ./springboot_example.jar
+COPY /home/ubuntu/workspace/test2-demo/target/springboot_example-*.jar ./springboot_example.jar
 
 # exposing the port number into 8080
 EXPOSE 8080

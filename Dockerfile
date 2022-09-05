@@ -23,16 +23,16 @@ FROM maven:latest
 
 # once get create's the jar file
 # again, creating the another directory
-RUN mkdir /app
+#RUN mkdir /app
 
 # specifying the working directory
-WORKDIR /app
+#WORKDIR /app
 
 # setting up the environment variables
-ENV BUILD_VERSION=$BUILD_VERSION
+#ENV BUILD_VERSION=$BUILD_VERSION
 
 # copying the jar from target path into container root directory
-COPY /home/ubuntu/workspace/test2-demo/target/*.jar ./springboot_example.jar
+COPY target/*.jar ./springboot_example.jar
 
 # exposing the port number into 8080
 EXPOSE 8080
